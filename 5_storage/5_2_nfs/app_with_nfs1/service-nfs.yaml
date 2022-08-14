@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-nfs-service
+  namespace: test-nfs
+  labels:
+    app: test-nfs-deployment
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+    name: http
+  selector:
+    app: test-nfs-deployment
